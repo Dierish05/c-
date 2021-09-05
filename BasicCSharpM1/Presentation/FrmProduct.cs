@@ -41,7 +41,8 @@ namespace Presentation
             int.TryParse(txtDd.Text, out dd);
             int.TryParse(txtYyyy.Text, out yyyy); 
             caducityDate = new DateTime(yyyy, mm, dd);
-            Producto product = new Producto()
+
+            Producto product = new Producto()//--------------------------
             {
                 Id = id,
                 Name = name,
@@ -52,9 +53,21 @@ namespace Presentation
                 unidadMedida = (UnidadMedida)Enum.GetValues(typeof(UnidadMedida)).GetValue(cmbUnidadMedida.SelectedIndex)
             };
             productoModel.AddProduct(product);
-            productoModel.GetProductosAsJson(product);
-            string JsonProduct = JsonConvert.SerializeObject(product);
-            PrintInformacionMessage(JsonProduct);
+            //richTextBox1.Text = product.ToString;
+            //productoModel.GetProductosAsJson(product);
+            //string JsonProduct = JsonConvert.SerializeObject(product);
+            //PrintInformacionMessage(JsonProduct);
+
+            MessageBox.Show($@"
+                                Id: {product.unidadMedida}
+                                Nombre: {product.unidadMedida}
+                                Descripcion:{product.Description}
+                                Cantidad: {product.Quantity}
+                                Precio: {product.Price}
+                                Fecha de caducidad: {product.CaducityDate}
+                                Unidad de medida: {product.unidadMedida}");
+
+            ClearTextboxes();
         }
 
         private void PrintInformacionMessage(string message)
@@ -63,5 +76,66 @@ namespace Presentation
                 MessageBoxIcon.Information);
         }
 
+        private void ClearTextboxes()
+        {
+            txtId.Text = string.Empty;
+            txtName.Text = string.Empty;
+            txtDescription.Text = string.Empty;
+            txtQuantity.Text = string.Empty;
+            txtPrice.Text = string.Empty;
+            txtMM.Text = string.Empty;
+            txtDd.Text = string.Empty;
+            txtYyyy.Text = string.Empty;
+            txtId.Focus();
+        }
+
+        private void btnJson_Click(object sender, EventArgs e)
+        {
+            string[] jsonArr = productoModel.GetProductosAsJson();
+            string aux = string.Empty;
+
+            for (int i = 0; i < jsonArr.Length; i++)
+            {
+                aux = $@"{aux}
+                         {jsonArr[i]}";
+            }
+
+            richTextBox1.Text = aux;
+        }
+
+        private void btnOrdenar_Click(object sender, EventArgs e)
+        {
+            Producto[] ordenar = productoModel.OrdenarByPrecio();
+            string aux_ord = string.Empty;
+
+            for (int i = 0; i < ordenar.Length; i++)
+            {
+                aux_ord = $@"{aux_ord}
+                                    {i + 1}. {ordenar[i].Name}
+                                    {i + 1}. {ordenar[i].Price}";
+            }
+
+            PrintInformacionMessage(aux_ord);
+        }
+
+        private void btnRango_Click(object sender, EventArgs e)
+        {
+            decimal mayor, menor;
+
+            decimal.TryParse(txtMayor.Text, out mayor);
+            decimal.TryParse(txtMenor.Text, out menor);
+            
+            Producto[] rango = productoModel.GetProductosByRangoPrecio(menor, mayor);
+            string aux_arr = string.Empty;
+
+            for (int i = 0; i < rango.Length; i++)
+            {
+                aux_arr = $@"{aux_arr}
+                                    {i + 1}. {rango[i].Name}
+                                    {i + 1}. {rango[i].Price}";
+            }
+
+            PrintInformacionMessage(aux_arr);
+        }
     }
 }

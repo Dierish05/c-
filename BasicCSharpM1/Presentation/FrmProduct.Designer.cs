@@ -50,6 +50,14 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnJson = new System.Windows.Forms.Button();
+            this.btnOrdenar = new System.Windows.Forms.Button();
+            this.txtMayor = new System.Windows.Forms.TextBox();
+            this.txtMenor = new System.Windows.Forms.TextBox();
+            this.btnRango = new System.Windows.Forms.Button();
+            this.lblRangoPrecio = new System.Windows.Forms.Label();
+            this.lblmenor = new System.Windows.Forms.Label();
+            this.lblMayor = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -277,11 +285,90 @@
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
+            // btnJson
+            // 
+            this.btnJson.Location = new System.Drawing.Point(830, 28);
+            this.btnJson.Name = "btnJson";
+            this.btnJson.Size = new System.Drawing.Size(133, 23);
+            this.btnJson.TabIndex = 9;
+            this.btnJson.Text = "convertir a Json";
+            this.btnJson.UseVisualStyleBackColor = true;
+            this.btnJson.Click += new System.EventHandler(this.btnJson_Click);
+            // 
+            // btnOrdenar
+            // 
+            this.btnOrdenar.Location = new System.Drawing.Point(16, 355);
+            this.btnOrdenar.Name = "btnOrdenar";
+            this.btnOrdenar.Size = new System.Drawing.Size(75, 23);
+            this.btnOrdenar.TabIndex = 10;
+            this.btnOrdenar.Text = "Ordenar por precio";
+            this.btnOrdenar.UseVisualStyleBackColor = true;
+            this.btnOrdenar.Click += new System.EventHandler(this.btnOrdenar_Click);
+            // 
+            // txtMayor
+            // 
+            this.txtMayor.Location = new System.Drawing.Point(75, 490);
+            this.txtMayor.Name = "txtMayor";
+            this.txtMayor.Size = new System.Drawing.Size(100, 22);
+            this.txtMayor.TabIndex = 11;
+            // 
+            // txtMenor
+            // 
+            this.txtMenor.Location = new System.Drawing.Point(75, 456);
+            this.txtMenor.Name = "txtMenor";
+            this.txtMenor.Size = new System.Drawing.Size(100, 22);
+            this.txtMenor.TabIndex = 12;
+            // 
+            // btnRango
+            // 
+            this.btnRango.Location = new System.Drawing.Point(19, 535);
+            this.btnRango.Name = "btnRango";
+            this.btnRango.Size = new System.Drawing.Size(75, 23);
+            this.btnRango.TabIndex = 13;
+            this.btnRango.Text = "Buscar";
+            this.btnRango.UseVisualStyleBackColor = true;
+            this.btnRango.Click += new System.EventHandler(this.btnRango_Click);
+            // 
+            // lblRangoPrecio
+            // 
+            this.lblRangoPrecio.AutoSize = true;
+            this.lblRangoPrecio.Location = new System.Drawing.Point(16, 427);
+            this.lblRangoPrecio.Name = "lblRangoPrecio";
+            this.lblRangoPrecio.Size = new System.Drawing.Size(120, 17);
+            this.lblRangoPrecio.TabIndex = 14;
+            this.lblRangoPrecio.Text = "Rango de precios";
+            // 
+            // lblmenor
+            // 
+            this.lblmenor.AutoSize = true;
+            this.lblmenor.Location = new System.Drawing.Point(16, 461);
+            this.lblmenor.Name = "lblmenor";
+            this.lblmenor.Size = new System.Drawing.Size(48, 17);
+            this.lblmenor.TabIndex = 15;
+            this.lblmenor.Text = "menor";
+            // 
+            // lblMayor
+            // 
+            this.lblMayor.AutoSize = true;
+            this.lblMayor.Location = new System.Drawing.Point(16, 495);
+            this.lblMayor.Name = "lblMayor";
+            this.lblMayor.Size = new System.Drawing.Size(47, 17);
+            this.lblMayor.TabIndex = 16;
+            this.lblMayor.Text = "mayor";
+            // 
             // FrmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 491);
+            this.ClientSize = new System.Drawing.Size(1068, 588);
+            this.Controls.Add(this.lblMayor);
+            this.Controls.Add(this.lblmenor);
+            this.Controls.Add(this.lblRangoPrecio);
+            this.Controls.Add(this.btnRango);
+            this.Controls.Add(this.txtMenor);
+            this.Controls.Add(this.txtMayor);
+            this.Controls.Add(this.btnOrdenar);
+            this.Controls.Add(this.btnJson);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAgregarP);
@@ -291,6 +378,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -318,5 +406,13 @@
         private System.Windows.Forms.TextBox txtYyyy;
         private System.Windows.Forms.TextBox txtDd;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btnJson;
+        private System.Windows.Forms.Button btnOrdenar;
+        private System.Windows.Forms.TextBox txtMayor;
+        private System.Windows.Forms.TextBox txtMenor;
+        private System.Windows.Forms.Button btnRango;
+        private System.Windows.Forms.Label lblRangoPrecio;
+        private System.Windows.Forms.Label lblmenor;
+        private System.Windows.Forms.Label lblMayor;
     }
 }

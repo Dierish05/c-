@@ -90,33 +90,40 @@ namespace Infraestructura
 
         }
 
-        public Producto[] GetProductosByUnidadMedida()
-        {
+        //public Producto[] GetProductosByUnidadMedida()
+        //{
 
-        }
+        //}
 
-        public Producto[] GetProductosByCaducity(DateTime dt)
-        {
+        //public Producto[] GetProductosByCaducity(DateTime dt)
+        //{
 
-        }
+        //}
 
         public Producto[] GetProductosByRangoPrecio(decimal p1, decimal p2)
         {
 
             int n = 1;
             Producto[] PRangoPrecio = new Producto[n];
-            int i = 0;
-            foreach (Producto p in productos)
+            //int i = 0;
+            for (int i = 0; i < productos.Length; i++)
             {
-                while (i < productos.Length)
-                {
-                    if (p.Price > p1 || p.Price < p2)
+                    if (productos[i].Price >= p1 || productos[i].Price <= p2)
                     {
-                        PRangoPrecio[i] = productos[i];
-                        n++;
+                    if (PRangoPrecio == null)
+                    {
+                        PRangoPrecio = new Producto[1];
+                        PRangoPrecio[0] = productos[i];
                     }
-                    i++;
+                    
+                    Producto[] tmp = new Producto[PRangoPrecio.Length + 1];
+                    Array.Copy(PRangoPrecio, tmp, PRangoPrecio.Length);
+                    tmp[tmp.Length - 1] = productos[i];
+                    PRangoPrecio = tmp;
+
                 }
+                    
+                    //i++;
             }
             return PRangoPrecio;
         }
@@ -125,7 +132,7 @@ namespace Infraestructura
         {
             //if (productos == null)
             //{
-            //    return throw new ArgumentException("Error, los objetos no pueden ser null"); ;
+            //    return 0;
             //}
             Array.Sort(productos, ProductoPrecioComparer);
             return productos;
@@ -151,10 +158,19 @@ namespace Infraestructura
             }
         }
 
-        public string GetProductosAsJson(Producto[] ps)
+        public string[] GetProductosAsJson()
         {
-            string[] JsonProduct = JsonConvert.SerializeObject(ps);
-            return JsonProduct;
+            string jsonObject;
+            string[] jsonArr = new string[productos.Length];
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                jsonObject = JsonConvert.SerializeObject(productos[i]);
+                JsonConvert.DeserializeObject<Producto>(jsonObject);
+                jsonArr[i] = jsonObject;
+            }
+
+            return jsonArr;
         }
 
     }
