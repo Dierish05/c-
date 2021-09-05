@@ -84,46 +84,47 @@ namespace Infraestructura
         }
        public decimal[] GetMayorPromedio() //mayores al promedio-----------------------------------------
         {
-            decimal[] salarioM = new decimal[10];
-            int i = 0;
-            foreach(Empleado e in empleados)
-            {
-                while(i > empleados.Length){ 
-                     if(e.Wage > GetSalarioPromedio())
-                     {
-                         salarioM[i]= e.Wage;
-                     }
-                    i++;
-                }
+            decimal[] salarios = new decimal[empleados.Length];
+            decimal salP = 0;
+            Array.Sort(empleados, EmpleadoSalarioComparer);
 
-            }
-            return salarioM;
-        }
-
-        public void GetMayorPromedioTest()
-        {
-            int n = 1;
-            decimal[] salarioM = new decimal[n];
-            int i = 0;
-            foreach (Empleado e in empleados)
+            for (int i = 0; i < empleados.Length; i++)
             {
-                while (i > empleados.Length)
+                if (empleados[i].Wage > salP)
                 {
-                    if (e.Wage > GetSalarioPromedio())
+                    for (int j = 0; j < empleados.Length; j++)
                     {
-                        salarioM[i] = e.Wage;
-                        salarioM = new decimal[n++];
+                        if (!(salarios[j] == 0))
+                        {
+                            salarios[j] = empleados[i].Wage;
+                        }
                     }
-                    i++;
                 }
-
             }
+
+            return salarios;
         }
 
-        //public void ShowMayorPromedio()
-        //{
-        //    GetMayorPromedioTest();
-        //    for(int i = 0; i < salarioM)
-        //}
+        public decimal[] GetSalarioMenorPromedio()//menores al promedio-----------------------------------------
+        {
+            decimal[] salarios = new decimal[empleados.Length];
+            decimal salarioProm = 0;
+            Array.Sort(empleados, EmpleadoSalarioComparer);
+
+            for (int i = 0; i < empleados.Length; i++)
+            {
+                if (empleados[i].Wage < salarioProm)
+                {
+                    for (int j = 0; j < empleados.Length; j++)
+                    {
+                        if (!(salarios[j] == 0))
+                        {
+                            salarios[j] = empleados[i].Wage;
+                        }
+                    }
+                }
+            }
+            return salarios;
+        }
     }
 }

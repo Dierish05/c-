@@ -183,20 +183,38 @@ namespace Presentation
 
         private void ButtonMay_Click(object sender, EventArgs e)
         {
-            //PrintInformacionMessage($"Los Salarios Mayores que el Promedio son: {empleadoModel.GetMayorPromedio}");
-            //PrintInformacionMessage(empleadoModel.GetMayorPromedioTe);
+            decimal[] ordenar = empleadoModel.GetMayorPromedio();
+            string aux_may = string.Empty;
+
+            for (int i = 0; i < ordenar.Length; i++)
+            {
+                aux_may = $@"{aux_may}
+                                    {i + 1}. {ordenar[i]}";
+            }
+
+            PrintInformacionMessage(aux_may);
         }
 
-        private void GroupBoxDatos_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnVentanaProductos_Click(object sender, EventArgs e)
         {
             //Form.ActiveForm.Visible = false;
             FrmProduct frmPro = new FrmProduct();
             frmPro.Show();
+        }
+
+        private void buttonMen_Click(object sender, EventArgs e)
+        {
+            decimal[] ordenar = empleadoModel.GetSalarioMenorPromedio();
+            string aux_men = string.Empty;
+
+            for (int i = 0; i < ordenar.Length; i++)
+            {
+                aux_men = $@"{aux_men}
+                                    {i + 1}. {ordenar[i]}";
+            }
+
+            PrintInformacionMessage(aux_men);
         }
     }
 }

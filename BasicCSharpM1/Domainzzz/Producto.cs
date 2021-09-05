@@ -23,5 +23,15 @@ namespace Domainzzz
         public DateTime  CaducityDate { get; set; }
         [JsonProperty]
         public UnidadMedida unidadMedida { get; set; }
+
+        public static implicit operator UnidadMedida(Producto v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static implicit operator Producto(UnidadMedida v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

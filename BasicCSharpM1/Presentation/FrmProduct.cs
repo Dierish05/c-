@@ -137,5 +137,43 @@ namespace Presentation
 
             PrintInformacionMessage(aux_arr);
         }
+
+        private void btnCaducityDate_Click(object sender, EventArgs e)
+        {
+            int mmB, ddB, yyyyB;
+            DateTime caducityDateB;
+
+            int.TryParse(txtMMB.Text, out mmB);
+            int.TryParse(txtddB.Text, out ddB);
+            int.TryParse(txtyyyyB.Text, out yyyyB);
+            caducityDateB = new DateTime(yyyyB, mmB, ddB);
+
+            Producto[] porCaducidad = productoModel.GetProductosByCaducity(caducityDateB);
+            string aux_cad = string.Empty;
+
+            for (int i = 0; i < porCaducidad.Length; i++)
+            {
+                aux_cad = $@"{aux_cad}
+                                    {i + 1}. {porCaducidad[i].Id}
+                                    {i + 1}. {porCaducidad[i].Name}
+                                    {i + 1}. {porCaducidad[i].Quantity}";
+            }
+            PrintInformacionMessage(aux_cad);
+        }
+
+        private void btnUnidadmedidaB_Click(object sender, EventArgs e)
+        {
+            Producto[] medida = productoModel.GetProductosByMedida(cmbunidadMedidaB.SelectedIndex);
+            string aux_med = string.Empty;
+
+            for (int i = 0; i < medida.Length; i++)
+            {
+                aux_med = $@"{aux_med}
+                                    {i + 1}. {medida[i].Name}
+                                    {i + 1}. {medida[i].unidadMedida}";
+            }
+
+            PrintInformacionMessage(aux_med);
+        }
     }
 }

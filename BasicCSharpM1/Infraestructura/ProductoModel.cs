@@ -1,4 +1,5 @@
 ﻿using Domainzzz;
+using Domainzzz.enums;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,8 @@ namespace Infraestructura
 {
     public class ProductoModel
     {
-        private Producto[] productos;
+        public Producto[] productos;
+        public Producto[] unidades;
 
         public ProductoModel () { }
 
@@ -90,15 +92,68 @@ namespace Infraestructura
 
         }
 
-        //public Producto[] GetProductosByUnidadMedida()
-        //{
+        public void GetProductosByUnidadMedida(UnidadMedida e)
+        {
+             for (int i = 0; i<productos.Length; i++)
+            {
+                if (productos[i].unidadMedida == e)
+                {
+                    for (int j = 0; j<productos.Length; j++)
+                    {
+                        productos[i] = unidades[j];
+                        foreach(UnidadMedida k in unidades)
+                        {
+                            _ = unidades[j];
+                        }
+}
+                }
+            }
+        }
 
-        //}
+        public Producto[] GetProductosByMedida(int medida)
+        {
+            Producto[] productoMed = new Producto[1];
+            for (int i = 0; i < productos.Length; i++)
+            {
+                if ((int)productos[i].unidadMedida == medida)
+                {
+                    Aux(productoMed, productos[i]);
+                }
+            }
 
-        //public Producto[] GetProductosByCaducity(DateTime dt)
-        //{
+            return productoMed;
+        }
 
-        //}
+        public Producto[] GetProductosByCaducity(DateTime dt)
+        {
+            Producto[] productoCadu = new Producto[1];
+
+            for (int i = 0; i < productos.Length; i++)
+            {
+                if (productos[i].CaducityDate == dt)
+                {
+                    Aux(productoCadu, productos[i]);
+                }
+            }
+
+            return productoCadu;
+        }
+
+        public void Aux(Producto[] arr, Producto producto)
+        {
+            if (arr == null)
+            {
+                arr = new Producto[1];
+                arr[1] = producto;
+                return;
+            }
+
+            Producto[] tmp = new Producto[arr.Length + 1];
+            Array.Copy(arr, tmp, arr.Length);
+
+            tmp[tmp.Length - 1] = producto;
+            arr = tmp;
+        }
 
         public Producto[] GetProductosByRangoPrecio(decimal p1, decimal p2)
         {

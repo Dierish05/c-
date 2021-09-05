@@ -58,6 +58,16 @@
             this.lblRangoPrecio = new System.Windows.Forms.Label();
             this.lblmenor = new System.Windows.Forms.Label();
             this.lblMayor = new System.Windows.Forms.Label();
+            this.btnCaducityDate = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMMB = new System.Windows.Forms.TextBox();
+            this.txtddB = new System.Windows.Forms.TextBox();
+            this.txtyyyyB = new System.Windows.Forms.TextBox();
+            this.cmbunidadMedidaB = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnUnidadmedidaB = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -167,27 +177,27 @@
             this.lblyyyy.AutoSize = true;
             this.lblyyyy.Location = new System.Drawing.Point(334, 219);
             this.lblyyyy.Name = "lblyyyy";
-            this.lblyyyy.Size = new System.Drawing.Size(36, 17);
+            this.lblyyyy.Size = new System.Drawing.Size(40, 17);
             this.lblyyyy.TabIndex = 19;
-            this.lblyyyy.Text = "yyyy";
+            this.lblyyyy.Text = "yyyy:";
             // 
             // lbldd
             // 
             this.lbldd.AutoSize = true;
             this.lbldd.Location = new System.Drawing.Point(257, 219);
             this.lbldd.Name = "lbldd";
-            this.lbldd.Size = new System.Drawing.Size(24, 17);
+            this.lbldd.Size = new System.Drawing.Size(28, 17);
             this.lbldd.TabIndex = 18;
-            this.lbldd.Text = "dd";
+            this.lbldd.Text = "dd:";
             // 
             // lblMM
             // 
             this.lblMM.AutoSize = true;
             this.lblMM.Location = new System.Drawing.Point(184, 219);
             this.lblMM.Name = "lblMM";
-            this.lblMM.Size = new System.Drawing.Size(30, 17);
+            this.lblMM.Size = new System.Drawing.Size(34, 17);
             this.lblMM.TabIndex = 17;
-            this.lblMM.Text = "MM";
+            this.lblMM.Text = "MM:";
             // 
             // txtYyyy
             // 
@@ -281,13 +291,13 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(539, 31);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(285, 281);
+            this.richTextBox1.Size = new System.Drawing.Size(307, 281);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
             // btnJson
             // 
-            this.btnJson.Location = new System.Drawing.Point(830, 28);
+            this.btnJson.Location = new System.Drawing.Point(539, 325);
             this.btnJson.Name = "btnJson";
             this.btnJson.Size = new System.Drawing.Size(133, 23);
             this.btnJson.TabIndex = 9;
@@ -299,7 +309,7 @@
             // 
             this.btnOrdenar.Location = new System.Drawing.Point(16, 355);
             this.btnOrdenar.Name = "btnOrdenar";
-            this.btnOrdenar.Size = new System.Drawing.Size(75, 23);
+            this.btnOrdenar.Size = new System.Drawing.Size(100, 23);
             this.btnOrdenar.TabIndex = 10;
             this.btnOrdenar.Text = "Ordenar por precio";
             this.btnOrdenar.UseVisualStyleBackColor = true;
@@ -356,11 +366,113 @@
             this.lblMayor.TabIndex = 16;
             this.lblMayor.Text = "mayor";
             // 
+            // btnCaducityDate
+            // 
+            this.btnCaducityDate.Location = new System.Drawing.Point(270, 535);
+            this.btnCaducityDate.Name = "btnCaducityDate";
+            this.btnCaducityDate.Size = new System.Drawing.Size(185, 23);
+            this.btnCaducityDate.TabIndex = 17;
+            this.btnCaducityDate.Text = "Obtener por  caducityDate";
+            this.btnCaducityDate.UseVisualStyleBackColor = true;
+            this.btnCaducityDate.Click += new System.EventHandler(this.btnCaducityDate_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(267, 456);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 17);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "MM:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(267, 477);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(28, 17);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "dd:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(267, 495);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(40, 17);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "yyyy:";
+            // 
+            // txtMMB
+            // 
+            this.txtMMB.Location = new System.Drawing.Point(320, 453);
+            this.txtMMB.Name = "txtMMB";
+            this.txtMMB.Size = new System.Drawing.Size(100, 22);
+            this.txtMMB.TabIndex = 21;
+            // 
+            // txtddB
+            // 
+            this.txtddB.Location = new System.Drawing.Point(320, 474);
+            this.txtddB.Name = "txtddB";
+            this.txtddB.Size = new System.Drawing.Size(100, 22);
+            this.txtddB.TabIndex = 22;
+            // 
+            // txtyyyyB
+            // 
+            this.txtyyyyB.Location = new System.Drawing.Point(320, 492);
+            this.txtyyyyB.Name = "txtyyyyB";
+            this.txtyyyyB.Size = new System.Drawing.Size(100, 22);
+            this.txtyyyyB.TabIndex = 23;
+            // 
+            // cmbunidadMedidaB
+            // 
+            this.cmbunidadMedidaB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbunidadMedidaB.FormattingEnabled = true;
+            this.cmbunidadMedidaB.Items.AddRange(new object[] {
+            "litros",
+            "milimetros",
+            "libras",
+            "gramos",
+            "kilogramos"});
+            this.cmbunidadMedidaB.Location = new System.Drawing.Point(486, 535);
+            this.cmbunidadMedidaB.Name = "cmbunidadMedidaB";
+            this.cmbunidadMedidaB.Size = new System.Drawing.Size(201, 24);
+            this.cmbunidadMedidaB.TabIndex = 24;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(483, 497);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(204, 17);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Obtener por Unidad de medida";
+            // 
+            // btnUnidadmedidaB
+            // 
+            this.btnUnidadmedidaB.Location = new System.Drawing.Point(710, 535);
+            this.btnUnidadmedidaB.Name = "btnUnidadmedidaB";
+            this.btnUnidadmedidaB.Size = new System.Drawing.Size(75, 23);
+            this.btnUnidadmedidaB.TabIndex = 26;
+            this.btnUnidadmedidaB.Text = "buscar";
+            this.btnUnidadmedidaB.UseVisualStyleBackColor = true;
+            this.btnUnidadmedidaB.Click += new System.EventHandler(this.btnUnidadmedidaB_Click);
+            // 
             // FrmProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 588);
+            this.ClientSize = new System.Drawing.Size(858, 588);
+            this.Controls.Add(this.btnUnidadmedidaB);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbunidadMedidaB);
+            this.Controls.Add(this.txtyyyyB);
+            this.Controls.Add(this.txtddB);
+            this.Controls.Add(this.txtMMB);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnCaducityDate);
             this.Controls.Add(this.lblMayor);
             this.Controls.Add(this.lblmenor);
             this.Controls.Add(this.lblRangoPrecio);
@@ -414,5 +526,15 @@
         private System.Windows.Forms.Label lblRangoPrecio;
         private System.Windows.Forms.Label lblmenor;
         private System.Windows.Forms.Label lblMayor;
+        private System.Windows.Forms.Button btnCaducityDate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtMMB;
+        private System.Windows.Forms.TextBox txtddB;
+        private System.Windows.Forms.TextBox txtyyyyB;
+        private System.Windows.Forms.ComboBox cmbunidadMedidaB;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnUnidadmedidaB;
     }
 }

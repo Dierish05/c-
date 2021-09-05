@@ -56,7 +56,7 @@
             // buttonAceptar
             // 
             this.buttonAceptar.Location = new System.Drawing.Point(4, 4);
-            this.buttonAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAceptar.Name = "buttonAceptar";
             this.buttonAceptar.Size = new System.Drawing.Size(113, 31);
             this.buttonAceptar.TabIndex = 0;
@@ -77,7 +77,7 @@
             // txtDni
             // 
             this.txtDni.Location = new System.Drawing.Point(153, 31);
-            this.txtDni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDni.Margin = new System.Windows.Forms.Padding(4);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(289, 22);
             this.txtDni.TabIndex = 2;
@@ -95,7 +95,7 @@
             // txtNombres
             // 
             this.txtNombres.Location = new System.Drawing.Point(153, 92);
-            this.txtNombres.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombres.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(289, 22);
             this.txtNombres.TabIndex = 4;
@@ -103,7 +103,7 @@
             // txtApellidos
             // 
             this.txtApellidos.Location = new System.Drawing.Point(153, 151);
-            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellidos.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(289, 22);
             this.txtApellidos.TabIndex = 5;
@@ -131,7 +131,7 @@
             // txtSalario
             // 
             this.txtSalario.Location = new System.Drawing.Point(153, 208);
-            this.txtSalario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSalario.Margin = new System.Windows.Forms.Padding(4);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(289, 22);
             this.txtSalario.TabIndex = 8;
@@ -147,19 +147,18 @@
             this.groupBoxDatos.Controls.Add(this.txtApellidos);
             this.groupBoxDatos.Controls.Add(this.label1);
             this.groupBoxDatos.Location = new System.Drawing.Point(16, 4);
-            this.groupBoxDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDatos.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxDatos.Name = "groupBoxDatos";
-            this.groupBoxDatos.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxDatos.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxDatos.Size = new System.Drawing.Size(485, 263);
             this.groupBoxDatos.TabIndex = 9;
             this.groupBoxDatos.TabStop = false;
             this.groupBoxDatos.Text = "Datos de Empleados";
-            this.groupBoxDatos.Enter += new System.EventHandler(this.GroupBoxDatos_Enter);
             // 
             // buttonSalario
             // 
-            this.buttonSalario.Location = new System.Drawing.Point(126, 4);
-            this.buttonSalario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSalario.Location = new System.Drawing.Point(125, 4);
+            this.buttonSalario.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSalario.Name = "buttonSalario";
             this.buttonSalario.Size = new System.Drawing.Size(137, 31);
             this.buttonSalario.TabIndex = 1;
@@ -170,7 +169,7 @@
             // buttonSalarioMin
             // 
             this.buttonSalarioMin.Location = new System.Drawing.Point(4, 43);
-            this.buttonSalarioMin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSalarioMin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSalarioMin.Name = "buttonSalarioMin";
             this.buttonSalarioMin.Size = new System.Drawing.Size(113, 28);
             this.buttonSalarioMin.TabIndex = 2;
@@ -180,8 +179,8 @@
             // 
             // buttonSP
             // 
-            this.buttonSP.Location = new System.Drawing.Point(126, 43);
-            this.buttonSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSP.Location = new System.Drawing.Point(125, 43);
+            this.buttonSP.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSP.Name = "buttonSP";
             this.buttonSP.Size = new System.Drawing.Size(137, 28);
             this.buttonSP.TabIndex = 3;
@@ -195,7 +194,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.57798F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.42202F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 205F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 206F));
             this.tableLayoutPanel1.Controls.Add(this.buttonSP, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonSalarioMin, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonSalario, 1, 0);
@@ -203,7 +202,7 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonMay, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonMen, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 378);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -213,8 +212,8 @@
             // 
             // buttonMay
             // 
-            this.buttonMay.Location = new System.Drawing.Point(283, 4);
-            this.buttonMay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMay.Location = new System.Drawing.Point(282, 4);
+            this.buttonMay.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMay.Name = "buttonMay";
             this.buttonMay.Size = new System.Drawing.Size(175, 28);
             this.buttonMay.TabIndex = 4;
@@ -224,13 +223,14 @@
             // 
             // buttonMen
             // 
-            this.buttonMen.Location = new System.Drawing.Point(283, 43);
-            this.buttonMen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMen.Location = new System.Drawing.Point(282, 43);
+            this.buttonMen.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMen.Name = "buttonMen";
             this.buttonMen.Size = new System.Drawing.Size(175, 28);
             this.buttonMen.TabIndex = 5;
             this.buttonMen.Text = "Salarios Men. al Prom.";
             this.buttonMen.UseVisualStyleBackColor = true;
+            this.buttonMen.Click += new System.EventHandler(this.buttonMen_Click);
             // 
             // cmbGenero
             // 
@@ -241,7 +241,7 @@
             "Masculino",
             "helicoptero Apache Volador"});
             this.cmbGenero.Location = new System.Drawing.Point(169, 316);
-            this.cmbGenero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGenero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGenero.Name = "cmbGenero";
             this.cmbGenero.Size = new System.Drawing.Size(160, 24);
             this.cmbGenero.TabIndex = 13;
@@ -259,7 +259,7 @@
             "Doctorado",
             "Post Doctorado"});
             this.cmbNivelAcademico.Location = new System.Drawing.Point(169, 274);
-            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbNivelAcademico.Margin = new System.Windows.Forms.Padding(4);
             this.cmbNivelAcademico.Name = "cmbNivelAcademico";
             this.cmbNivelAcademico.Size = new System.Drawing.Size(160, 24);
             this.cmbNivelAcademico.TabIndex = 14;
@@ -306,7 +306,7 @@
             this.Controls.Add(this.cmbGenero);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.groupBoxDatos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Empleado";
             this.Load += new System.EventHandler(this.Form1_Load);
